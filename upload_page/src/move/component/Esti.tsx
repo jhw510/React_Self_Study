@@ -1,10 +1,10 @@
 import React from 'react';
 import {MDBBtn, MDBIcon} from "mdbreact";
 
-const Estimate = () => {
+const Esti = () => {
     return (
         <div>
-          <h1>이사 견적 보기</h1>
+            <h1>이사 견적 보기</h1>
 
             <MDBIcon icon="truck" size={"10x"} />
             <MDBIcon icon="home" size={"10x"} />
@@ -14,4 +14,4 @@ const Estimate = () => {
     );
 };
 
-export default Estimate;
+export default Esti;

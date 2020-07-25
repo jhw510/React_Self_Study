@@ -89,8 +89,18 @@ const SidebarNavbar = () => {
 
                             </MDBNavItem>
                             <MDBNavItem>
+                                <MDBNavLink to="/movingType">이사타입</MDBNavLink>
+                            </MDBNavItem>
+                            <MDBNavItem>
                                 <MDBNavLink to="#!">Profile</MDBNavLink>
                             </MDBNavItem>
+                            <MDBNavItem>
+                                <MDBNavLink to="#!">Profile</MDBNavLink>
+                            </MDBNavItem> <MDBNavItem>
+                            <MDBNavLink to="#!">Profile</MDBNavLink>
+                        </MDBNavItem>
+                            
+                            
                         </MDBNavbarNav>
                     </MDBCollapse>
 
