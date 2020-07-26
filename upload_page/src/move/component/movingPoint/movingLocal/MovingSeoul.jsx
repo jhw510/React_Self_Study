@@ -1,22 +1,29 @@
 import React, { useState} from 'react';
 import {Modal} from 'react-bootstrap'
 import {MDBBtn, MDBIcon} from "mdbreact";
-
-
+import { Route, BrowserRouter, Switch,Link } from 'react-router-dom'
+import MovingFloor from "../MovingFloor";
+import ModalLink from "react-router-modal/lib/modal_link";
 const MovingSeoul= () => {
     const [show, setShow] = useState(false);
     const onClickShow=e=>{
         setShow(!show)
     }
+    const [addr,setAddr]=useState('')
+    const onClickBtn=e=>{
+        setAddr(e.target.value)
+        onClickShow()
+    }
+
     return (
         <>
-            <MDBBtn outline color="red" onClick={onClickShow}>
+            <MDBBtn color="amber" onClick={onClickShow}>
                 서울
             </MDBBtn>
-            <Modal
+            <Modal className={"modal"}
                 size={"lg"}
                 show={show}
-                onHide={() => setShow(false)}
+                   onHide={onClickShow}
                 dialogClassName="modal-90w"
                 aria-labelledby="example-custom-modal-styling-title"
             >
@@ -25,11 +32,15 @@ const MovingSeoul= () => {
                         서울
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body >
+                    <BrowserRouter>
+                        <Switch>
                      <a className="list">
-                        <MDBBtn onClick="str_zipcode_gubun('서울강남구')">강남구</MDBBtn>
-                        <MDBBtn onClick="str_zipcode_gubun('서울강동구')">강동구</MDBBtn>
-                        <MDBBtn onClick="str_zipcode_gubun('서울강북구')">강북구</MDBBtn>
+                         <Link to='/moving/seoul' component={MovingFloor} >서울</Link>
+                         <MDBBtn component={MovingFloor} onClick={onClickBtn}> 강남구</MDBBtn>
+
+                        <MDBBtn className={"kangdong"} onClick="str_zipcode_gubun('서울강동구')" onClick={onClickBtn}>강동구</MDBBtn>
+                        <MDBBtn onClick="str_zipcode_gubun('서울강북구')" onClick={onClickBtn}>강북구</MDBBtn>
                         <MDBBtn onClick="str_zipcode_gubun('서울강서구')">강서구</MDBBtn>
                         <MDBBtn onClick="str_zipcode_gubun('서울관악구')">관악구</MDBBtn>
                         <MDBBtn onClick="str_zipcode_gubun('서울광진구')">광진구</MDBBtn>
@@ -53,7 +64,8 @@ const MovingSeoul= () => {
                         <MDBBtn onClick="str_zipcode_gubun('서울중구')">중구</MDBBtn>
                         <MDBBtn onClick="str_zipcode_gubun('서울중랑구')">중랑구</MDBBtn>
                     </a>
-
+                        </Switch>
+                    </BrowserRouter>
                 </Modal.Body>
             </Modal>
         </>

@@ -10,7 +10,7 @@ const MovingJeonnam= () => {
     }
     return (
         <>
-            <MDBBtn color="pink" onClick={onClickShow}>
+            <MDBBtn color="amber"onClick={onClickShow}>
                 전남
             </MDBBtn>
             <Modal

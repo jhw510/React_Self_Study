@@ -10,7 +10,7 @@ const MovingChungnam= () => {
     }
     return (
         <>
-            <MDBBtn color="pink" onClick={onClickShow}>
+            <MDBBtn color="amber"onClick={onClickShow}>
                 충남
             </MDBBtn>
             <Modal

@@ -10,7 +10,7 @@ const MovingIncheon= () => {
     }
     return (
         <>
-            <MDBBtn color="pink" onClick={onClickShow}>
+            <MDBBtn color="amber"onClick={onClickShow}>
                 인천
             </MDBBtn>
             <Modal

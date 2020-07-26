@@ -1,7 +1,7 @@
 import React, { useState,useReducer} from 'react';
 import {Modal} from 'react-bootstrap'
 import {MDBBtn, MDBIcon} from "mdbreact";
-import { DatePicker, RangePicker, theme } from 'react-trip-date';
+import { DatePicker, theme } from 'react-trip-date';
 import {ThemeProvider} from 'styled-components';
 import './MovingType.css'
 
@@ -21,13 +21,19 @@ const  Day = ({  day  }) => {
     return  (
         <>
             <p  className="date">{day.format('DD')}</p>
-            <p  className="date">7</p>
         </>
     );
 };
 
 const MovingDate = () => {
-    const onChangeDate = date => console.log(date)
+    const [pickDate,setPickDate]=useState('')
+    const onChangeDate = date => {
+        console.log(date)
+    }
+    const onClickPickDate=e=>{
+        setPickDate(e.target.value)
+       
+    }
     const [show, setShow] = useState(false);
     const [Title,setTitle]=useState("")
     const onClickShow=e=>{
@@ -35,14 +41,13 @@ const MovingDate = () => {
     }
     return (
         <>
-            <MDBBtn color="pink" onClick={onClickShow}>
+            <MDBBtn color="amber"onClick={onClickShow}>
                이사날짜
             </MDBBtn>
-
             <Modal
                 size={"lg"}
                 show={show}
-                onHide={() => setShow(false)}
+                onHide={onClickShow}
                 dialogClassName="modal-90w"
                 aria-labelledby="example-custom-modal-styling-title"
             >
@@ -55,23 +60,23 @@ const MovingDate = () => {
                     <div>
                         <ThemeProvider theme={theme}>
                             <DatePicker
+                                pickDate={pickDate}
+                                onClick={onClickPickDate}
                                 handleChange={onChangeDate}
                                 selectedDays={""} //initial selected days
-                                jalali={false}
                                 numberOfMonths={2}
                                 numberOfSelectableDays={2} // number of days you need
-                                disabledDays={['2020-8-02']} //disabeld days
+                                disabledDays={""} //disabeld days
                                 responsive={handleResponsive} // custom responsive, when using it, `numberOfMonths` props not working
                                 disabledBeforToday={true}
                                 disabled={false} // disable calendar
                                 dayComponent={Day} //custom day component
                                 titleComponent={Title} // custom title of days
                             />
-                        <h3>날짜는</h3>
+                            <MDBBtn href={"/startPoint"}>다음</MDBBtn>
+
                         </ThemeProvider>
                     </div>
-
-
                 </Modal.Body>
             </Modal>
         </>

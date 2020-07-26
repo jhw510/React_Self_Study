@@ -14,7 +14,7 @@ const MovingStartPoint= () => {
     }
     return (
         <>
-            <MDBBtn color="pink" onClick={onClickShow}>
+            <MDBBtn outline color="deep-orange"onClick={onClickShow}>
                출발지
             </MDBBtn>
             <Modal
@@ -35,7 +35,7 @@ const MovingStartPoint= () => {
                         <Switch>
                         <a className="list">
 
-                            <Link to='/moving/seoul' component={MovingSeoul}>서울</Link>
+                            <Link to='/moving/seoul' component={MovingSeoul} onClick={show}>서울</Link>
                             <Link to={"/moving/gyeonggi"} component={MovingGyeonggi}>경기</Link>
                             <Link to={"/moving/incheon"} component={MovingIncheon}>인천</Link>
                             <Link to={"/moving/daejeon"} component={MovingDaejeon}>대전</Link>

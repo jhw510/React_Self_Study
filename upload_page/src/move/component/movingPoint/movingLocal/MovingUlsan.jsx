@@ -1,6 +1,9 @@
 import React, { useState} from 'react';
 import {Modal} from 'react-bootstrap'
 import {MDBBtn, MDBIcon} from "mdbreact";
+import {Link} from "react-router-dom";
+
+import MovingFloor from "../MovingFloor";
 
 
 const MovingUlsan= () => {
@@ -10,7 +13,7 @@ const MovingUlsan= () => {
     }
     return (
         <>
-            <MDBBtn color="pink" onClick={onClickShow}>
+            <MDBBtn color="amber" onClick={onClickShow}>
                울산
             </MDBBtn>
             <Modal
@@ -27,7 +30,7 @@ const MovingUlsan= () => {
                 </Modal.Header>
                 <Modal.Body>
                      <a className="list">
-                        <MDBBtn onClick="str_zipcode_gubun('울산남구')">남구</MDBBtn>
+                        <Link to={'/moving/floor'} component={MovingFloor} onClick="str_zipcode_gubun('울산남구')">남구</Link>
                         <MDBBtn onClick="str_zipcode_gubun('울산동구')">동구</MDBBtn>
                         <MDBBtn onClick="str_zipcode_gubun('울산북구')">북구</MDBBtn>
                         <MDBBtn onClick="str_zipcode_gubun('울산울주군')">울주군</MDBBtn>

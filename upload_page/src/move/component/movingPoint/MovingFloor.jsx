@@ -4,16 +4,17 @@ import {MDBBtn, MDBIcon} from "mdbreact";
 
 
 const MovingFloor= () => {
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
     const onClickShow=e=>{
         setShow(!show)
     }
     return (
         <>
-            <MDBBtn color="pink" onClick={onClickShow}>
-                출발지
+            <MDBBtn outline color="light-blue"onClick={onClickShow}>
+                층선택
             </MDBBtn>
             <Modal
+                onClick={onClickShow}
                 size={"lg"}
                 show={show}
                 onHide={() => setShow(false)}
@@ -22,7 +23,7 @@ const MovingFloor= () => {
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="example-custom-modal-styling-title">
-                        출발지역
+                        층 선택
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>

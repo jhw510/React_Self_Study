@@ -5,6 +5,7 @@ import {
     MDBDropdown, MDBDropdownToggle, MDBCollapse, MDBIcon,} from "mdbreact";
 import Estimate from "../../move/component/Estimate";
 import {Route,Link} from 'react-router-dom'
+import MovingType from "../../move/component/MovingType";
 const SidebarNavbar = () => {
     const [toggleStateA,setToggleStateA]=useState(false)
     const mainStyle = {
@@ -81,23 +82,21 @@ const SidebarNavbar = () => {
                                 }}
                             />
                             <MDBNavItem active>
-                                <MDBNavLink to="/">Home</MDBNavLink>
+                                <a href="/">Home</a>
                             </MDBNavItem>
                             <MDBNavItem>
-
-                                <Link to={"/estimate"}>이사견적보기</Link>
-
+                                <a href={"/estimate"}>이사견적보기</a>
                             </MDBNavItem>
                             <MDBNavItem>
-                                <MDBNavLink to="/movingType">이사타입</MDBNavLink>
+                                <a href="/movingType">이사타입</a>
                             </MDBNavItem>
                             <MDBNavItem>
-                                <MDBNavLink to="#!">Profile</MDBNavLink>
+                                <a href="/videoUpload">영상올리기</a>
                             </MDBNavItem>
                             <MDBNavItem>
-                                <MDBNavLink to="#!">Profile</MDBNavLink>
+                                <a href="#!">Profile</a>
                             </MDBNavItem> <MDBNavItem>
-                            <MDBNavLink to="#!">Profile</MDBNavLink>
+                            <a href="#!">Profile</a>
                         </MDBNavItem>
                             
                             

@@ -4,8 +4,9 @@ import SidebarNavbar from "./SidebarNavbar";
 import Esti from "../../move/component/Esti";
 import VideoUploadPage from "../../videoUpload/VideoUploadPage";
 import MovingType from "../../move/component/MovingType";
+import MovingDate from "../../move/component/MovingDate";
 import Main from "./Main";
-
+import MovingStartPoint from "../../move/component/movingPoint/MovingStartPoint";
 const Home: React.FC = () => {
     return (
         <>
@@ -18,6 +19,8 @@ const Home: React.FC = () => {
                     </Route>
                     <Route path={"/videoUpload"} component={VideoUploadPage}/>
                     <Route path={"/movingType"} component={MovingType}/>
+                    <Route path={"/movingDate"} component={MovingDate}/>
+                    <Route path={"/startPoint"} component={MovingStartPoint}/>
                </Switch>
                </BrowserRouter>
         </>

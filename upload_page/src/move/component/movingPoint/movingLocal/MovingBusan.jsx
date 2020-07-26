@@ -10,7 +10,7 @@ const MovingBusan= () => {
     }
     return (
         <>
-            <MDBBtn color="pink" onClick={onClickShow}>
+            <MDBBtn color="amber"onClick={onClickShow}>
                 부산
             </MDBBtn>
             <Modal
