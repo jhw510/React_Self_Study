@@ -1,9 +1,9 @@
 import React, { useState} from 'react';
 import {Modal} from 'react-bootstrap'
 import {MDBBtn, MDBIcon} from "mdbreact";
-import './MovingType.css'
 
-const MovingType = () => {
+
+const MovingUlsan= () => {
     const [show, setShow] = useState(false);
     const onClickShow=e=>{
         setShow(!show)
@@ -11,9 +11,8 @@ const MovingType = () => {
     return (
         <>
             <MDBBtn color="pink" onClick={onClickShow}>
-                Custom Width Modal
+               울산
             </MDBBtn>
-
             <Modal
                 size={"lg"}
                 show={show}
@@ -23,20 +22,17 @@ const MovingType = () => {
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="example-custom-modal-styling-title">
-                        이사종류
+                      울산
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <img className={"mtPhoto"} src={"https://image.flaticon.com/icons/svg/888/888448.svg"} type={"button"}/>
-                    <h3>보관이사</h3>
-                    <img className={"mtPhoto"}  src={"https://image.flaticon.com/icons/svg/1625/1625514.svg"} type={"button"}/>
-                    <h3>사무실이사</h3>
-                    <img className={"mtPhoto"} src={"https://image.flaticon.com/icons/svg/3023/3023392.svg"}type={"button"}/>
-                    <h3>우리집이사</h3>
-                    <img className={"mtPhoto"} src={"https://image.flaticon.com/icons/svg/948/948615.svg"}type={"button"}/>
-                    <h3>소형이사</h3>
-
-
+                     <a className="list">
+                        <MDBBtn onClick="str_zipcode_gubun('울산남구')">남구</MDBBtn>
+                        <MDBBtn onClick="str_zipcode_gubun('울산동구')">동구</MDBBtn>
+                        <MDBBtn onClick="str_zipcode_gubun('울산북구')">북구</MDBBtn>
+                        <MDBBtn onClick="str_zipcode_gubun('울산울주군')">울주군</MDBBtn>
+                        <MDBBtn onClick="str_zipcode_gubun('울산중구')">중구</MDBBtn>
+                    </a>
                 </Modal.Body>
             </Modal>
         </>
@@ -44,4 +40,4 @@ const MovingType = () => {
 }
 
 
-export default MovingType;
+export default MovingUlsan;

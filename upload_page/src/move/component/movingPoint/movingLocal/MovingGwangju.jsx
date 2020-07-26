@@ -1,9 +1,9 @@
 import React, { useState} from 'react';
 import {Modal} from 'react-bootstrap'
 import {MDBBtn, MDBIcon} from "mdbreact";
-import './MovingType.css'
 
-const MovingType = () => {
+
+const MovingGwangju= () => {
     const [show, setShow] = useState(false);
     const onClickShow=e=>{
         setShow(!show)
@@ -11,9 +11,8 @@ const MovingType = () => {
     return (
         <>
             <MDBBtn color="pink" onClick={onClickShow}>
-                Custom Width Modal
+                광주
             </MDBBtn>
-
             <Modal
                 size={"lg"}
                 show={show}
@@ -23,19 +22,18 @@ const MovingType = () => {
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="example-custom-modal-styling-title">
-                        이사종류
+                        광주
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <img className={"mtPhoto"} src={"https://image.flaticon.com/icons/svg/888/888448.svg"} type={"button"}/>
-                    <h3>보관이사</h3>
-                    <img className={"mtPhoto"}  src={"https://image.flaticon.com/icons/svg/1625/1625514.svg"} type={"button"}/>
-                    <h3>사무실이사</h3>
-                    <img className={"mtPhoto"} src={"https://image.flaticon.com/icons/svg/3023/3023392.svg"}type={"button"}/>
-                    <h3>우리집이사</h3>
-                    <img className={"mtPhoto"} src={"https://image.flaticon.com/icons/svg/948/948615.svg"}type={"button"}/>
-                    <h3>소형이사</h3>
-
+                     <a className="list">
+                        <script language="javascript" type="text/javascript" src="../db_class/string.js"></script>
+                        <MDBBtn onClick="str_zipcode_gubun('광주광산구')">광산구</MDBBtn>
+                        <MDBBtn onClick="str_zipcode_gubun('광주남구')">남구</MDBBtn>
+                        <MDBBtn onClick="str_zipcode_gubun('광주동구')">동구</MDBBtn>
+                        <MDBBtn onClick="str_zipcode_gubun('광주북구')">북구</MDBBtn>
+                        <MDBBtn onClick="str_zipcode_gubun('광주서구')">서구</MDBBtn>
+                    </a>
 
                 </Modal.Body>
             </Modal>
@@ -44,4 +42,4 @@ const MovingType = () => {
 }
 
 
-export default MovingType;
+export default MovingGwangju;
